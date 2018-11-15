@@ -51,18 +51,18 @@
         const esriStreets = L.esri.basemapLayer('Gray').addTo(map);
 
         // add hosted feature layer
-        const earthquakesLayer = L.esri.featureLayer({url: 'https://services.arcgis.com/8df8p0NlLFEShl0r/arcgis/rest/services/Duluth_POI/FeatureServer/0?token=Ge_H0MzW_nhh55Mn6-aL2yZ6VY21rb82grrcmvda_E1R8F6vr6f7ar9CGRtXnDnVypJYQ4YS6zQpITt8vc1G6S46jZpiUQG3iLK4xw-pMY1bGEByd2A7vQRO9G_DHqY-5k0Qel9T8I6h8yDDstBUr_Bsk6XZNqi-uVQqQf-VCf6Y9gOB8V_34qoIb-CnDELvFi6uNwDfQUIdg5edKQXTqP9-HQJ535B7yD27Q_lu_1tet0lrEGIvno-f-vRGjCH6'}).addTo(map);
+        const duluthPOI = L.esri.featureLayer({url: 'https://services.arcgis.com/8df8p0NlLFEShl0r/arcgis/rest/services/Duluth_POI/FeatureServer/0?token=GAR8v9MMtlcZgyrXdM7-0a3qBgdZ2RwIovJtQG_sz3D8xGZukljOMrO6VMDAStGxgWNJSIlusEKIFaXbgg-7qPLWaTCZwHu4t9Ew2-R-9rkNsfO6r-4YnZjPAR8VCob3vdJaAOTbUNuZTRYYP1hi_jiLoIF8oN6dtY-fKcmcPFw4cU1WXqDeQAM4VmE5HzHTCPb0W7EtXTuB_pv7CCWKqASGoVedBm3nHSbO9BFWxXvUhWfwDk-brjbiL7fNfQXa'}).addTo(map);
 
         // set up popup for earthquakes layer
-        earthquakesLayer.bindPopup(function(evt) {
+        /*duluthPOI.bindPopup(function(evt) {
             return L.Util.template(
-              '<table>'+
-                '<tr><td>LOCATION:</td><td>{LOCATION}</td></tr>'+
+              '<table>'
+                '<tr><td>Attraction:</td><td>{Attraction}</td></tr>'+
                 '<tr><td>YEAR:</td><td>{YEAR}</td></tr>'+
                 '<tr><td>MAGNITUDE:</td><td>{MAGNITUDE}</td></tr>'+
               '</table>',
               evt.feature.properties);
-        });
+        });*/
     </script>
 </body>
 </html>
