@@ -1,6 +1,5 @@
 <!--
-  An example displaying a hosted feature layer
-  ref: https://esri.github.io/esri-leaflet/tutorials/working-with-feature-layers.html
+  A map of points of interest around Duluth.
  -->
 
 <!doctype html>
@@ -45,14 +44,14 @@
     <script>
         // add map
         const map = L.map('map', {
-          center: [45.52, -122.667],
-          zoom: 3
+          center: [46.7867, -92.1005],
+          zoom: 11
         });
         // add basemap
         const esriStreets = L.esri.basemapLayer('Gray').addTo(map);
 
         // add hosted feature layer
-        const earthquakesLayer = L.esri.featureLayer({url: 'https://services.arcgis.com/8df8p0NlLFEShl0r/arcgis/rest/services/NaturalDisasters_Earthquakes/FeatureServer/0'}).addTo(map);
+        const earthquakesLayer = L.esri.featureLayer({url: 'https://services.arcgis.com/8df8p0NlLFEShl0r/arcgis/rest/services/Duluth_POI/FeatureServer/0?token=Ge_H0MzW_nhh55Mn6-aL2yZ6VY21rb82grrcmvda_E1R8F6vr6f7ar9CGRtXnDnVypJYQ4YS6zQpITt8vc1G6S46jZpiUQG3iLK4xw-pMY1bGEByd2A7vQRO9G_DHqY-5k0Qel9T8I6h8yDDstBUr_Bsk6XZNqi-uVQqQf-VCf6Y9gOB8V_34qoIb-CnDELvFi6uNwDfQUIdg5edKQXTqP9-HQJ535B7yD27Q_lu_1tet0lrEGIvno-f-vRGjCH6'}).addTo(map);
 
         // set up popup for earthquakes layer
         earthquakesLayer.bindPopup(function(evt) {
