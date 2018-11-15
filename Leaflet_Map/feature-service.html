@@ -54,15 +54,19 @@
         const duluthPOI = L.esri.featureLayer({url: 'https://services.arcgis.com/8df8p0NlLFEShl0r/arcgis/rest/services/Duluth_POI/FeatureServer/0?token=GAR8v9MMtlcZgyrXdM7-0a3qBgdZ2RwIovJtQG_sz3D8xGZukljOMrO6VMDAStGxgWNJSIlusEKIFaXbgg-7qPLWaTCZwHu4t9Ew2-R-9rkNsfO6r-4YnZjPAR8VCob3vdJaAOTbUNuZTRYYP1hi_jiLoIF8oN6dtY-fKcmcPFw4cU1WXqDeQAM4VmE5HzHTCPb0W7EtXTuB_pv7CCWKqASGoVedBm3nHSbO9BFWxXvUhWfwDk-brjbiL7fNfQXa'}).addTo(map);
 
         // set up popup for earthquakes layer
-        /*duluthPOI.bindPopup(function(evt) {
+        duluthPOI.bindPopup(function(evt) {
+            console.log(evt.feature.properties);
             return L.Util.template(
-              '<table>'
-                '<tr><td>Attraction:</td><td>{Attraction}</td></tr>'+
-                '<tr><td>YEAR:</td><td>{YEAR}</td></tr>'+
-                '<tr><td>MAGNITUDE:</td><td>{MAGNITUDE}</td></tr>'+
+              '<img style="max-width: 300px;" src={USER_Picture}></img>'+
+              '<h2><strong>{USER_Attraction}</strong><h2>'+
+              '<table style="font-size: 12px;">'+
+                '<tr><td>Address:</td><td>{StAddr}</td></tr>'+
+                '<tr><td>Website:</td><td><a href={USER_Website}>{USER_Website}</a></td></tr>'+
               '</table>',
               evt.feature.properties);
-        });*/
+        }, {
+            maxWidth: "auto"
+        });
     </script>
 </body>
 </html>
